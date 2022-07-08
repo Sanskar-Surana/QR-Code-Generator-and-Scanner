@@ -22,7 +22,7 @@ for i in range(0, len(df.axes[0])):
 
     msg = EmailMessage()
     msg['Subject'] = 'Qr code for '+d1
-    msg['From'] = 'sanskars.cse20@sbjit.edu.in'
+    msg['From'] = 'EmailId.gmail.com'
     msg['To'] = j
     msg.set_content("Scan this Qr code to mark your attendance for "+d1)
     k = df.roll[i]
@@ -35,6 +35,6 @@ for i in range(0, len(df.axes[0])):
     msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login('sanskars.cse20@sbjit.edu.in', 'party hard')
+        smtp.login('EmailId.google.com', 'Password')
         smtp.send_message(msg)
     print("mail sent to "+j)
